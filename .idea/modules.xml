@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/prime1/Prime1.iml" filepath="$PROJECT_DIR$/prime1/Prime1.iml" />
       <module fileurl="file://$PROJECT_DIR$/SPOJ.iml" filepath="$PROJECT_DIR$/SPOJ.iml" />
       <module fileurl="file://$PROJECT_DIR$/adding-reversed-numbers/adding-reversed-numbers.iml" filepath="$PROJECT_DIR$/adding-reversed-numbers/adding-reversed-numbers.iml" />
+      <module fileurl="file://$PROJECT_DIR$/feynman/feynman.iml" filepath="$PROJECT_DIR$/feynman/feynman.iml" />
     </modules>
   </component>
 </project>
