@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/SPOJ.iml" filepath="$PROJECT_DIR$/SPOJ.iml" />
       <module fileurl="file://$PROJECT_DIR$/adding-reversed-numbers/adding-reversed-numbers.iml" filepath="$PROJECT_DIR$/adding-reversed-numbers/adding-reversed-numbers.iml" />
       <module fileurl="file://$PROJECT_DIR$/feynman/feynman.iml" filepath="$PROJECT_DIR$/feynman/feynman.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple-image-recognition/simple-image-recognition.iml" filepath="$PROJECT_DIR$/simple-image-recognition/simple-image-recognition.iml" />
     </modules>
   </component>
 </project>
