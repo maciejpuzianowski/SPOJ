@@ -1,6 +1,6 @@
-import java.awt.*;
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -9,66 +9,21 @@ public class Main {
         while(scanner.hasNextLine()){
             recognition.addInput(scanner.nextLine());
         }
-        recognition.dataToPictures();
-        recognition.recognize();
+        recognition.start();
     }
 }
 
-public class Recognition {
-    private ArrayList<String> Input;
-    private ArrayList<Picture> Pictures;
-
+class Recognition {
+    final private ArrayList<String> Input;
     Recognition(){
         Input = new ArrayList<>();
-        Pictures = new ArrayList<>();
     }
 
     public void addInput(String s){
         Input.add(s);
     }
 
-    /*
-    *
-                    1
-
-                    5
-
-                    5 5
-                    x...x
-                    .x.x.
-                    ..x..
-                    .x.x.
-                    x...x
-                    5 5
-                    xxxxx
-                    x...x
-                    x...x
-                    x...x
-                    xxxxx
-                    6 6
-                    ..x...
-                    ..x...
-                    xxxxxx
-                    ..x...
-                    ..x...
-                    ......
-                    5 5
-                    .xxx.
-                    x...x
-                    x...x
-                    x...x
-                    .xxx.
-                    5 5
-                    .xxx.
-                    .x.x.
-                    .xxx.
-                    .....
-                    .....
-
-    *
-    * */
-
-    public void dataToPictures(){
+    public void start(){
         int testCases = Integer.parseInt(Input.get(0));
         int startLine = 2;
         for(int i = 1; i <= testCases; i++) {
@@ -86,41 +41,38 @@ public class Recognition {
                 int counter = 0;
                 int width = -1, height = -1;
                 while (k < Input.size() && Input.get(k).length() != 1){
-                    var ref = Input.get(k);
-                    if (ref.length() == 3){
-                        if(height != -1){
-                            counter = 0;
-                        }
-                        var dim = ref.split(" ");
-                        height = Integer.parseInt(dim[0]);
-                        width = Integer.parseInt(dim[1]);
-                        data = new String[height];
-                    }
-                    if (ref.length() == width){
-                        data[counter] = ref;
-                        if(counter == data.length-1) pictures.add(new Picture(width, height, data));
-                        counter++;
-                    }
-                    k++;
+                   var ref = Input.get(k);
+                   if (ref.length() >= 3 && ref.contains(" ")){
+                       if(height != -1){
+                           counter = 0;
+                       }
+                       var dim = ref.split(" ");
+                       height = Integer.parseInt(dim[0]);
+                       width = Integer.parseInt(dim[1]);
+                       data = new String[height];
+                   }
+                   if (ref.length() == width){
+                       data[counter] = ref;
+                       if(counter == data.length-1) pictures.add(new Picture(width, height, data));
+                       counter++;
+                   }
+                   k++;
                 }
                 if(numberOfPicturesInTest == pictures.size()) {
-                    Pictures.addAll(pictures);
+                    for (Picture x: pictures) System.out.print(x.whatAmI());
+                    System.out.println();
                     break;
                 }
             }
         }
     }
-
-    public void recognize(){
-        for(var p: Pictures) System.out.println(p.whatAmI());
-    }
 }
 
-public class Picture {
-    private int Width;
-    private int Height;
-    private String[] Data;
-    private ArrayList<Point> Points;
+class Picture {
+    private final int Width;
+    private final int Height;
+    private final String[] Data;
+    private final ArrayList<Point> Points;
 
     Picture(int w, int h, String[] d){
         Width = w;
@@ -144,11 +96,6 @@ public class Picture {
 
     public String whatAmI(){
         String outcome = "x";
-        // order points in list by distance between each other
-        //Points.sort(new PointsByDistanceComparator(new Point(0,0)));
-//        var valuePairs = new ArrayList<PointAtanKeyValuePair>();
-//        for(var p: Points) valuePairs.add(new PointAtanKeyValuePair(p, Math.atan2(p.y, p.x)));
-//        for(var vp: valuePairs) System.out.println(vp.getPoint() + " | "+ vp.getAtan());
         ArrayList<LinearFunction> lines = new ArrayList<>();
         for(int i = 0; i < Points.size()-1;){
             var line = new LinearFunction(Points.get(i), Points.get(i+1));
@@ -189,20 +136,15 @@ public class Picture {
     }
 }
 
-public class LinearFunction {
-    private double A;
-    private double B;
-    private Point Point1;
-    private Point Point2;
-
-    private double ConstantX;
-    private double ConstantY;
+class LinearFunction {
+    private final double A;
+    private final double B;
+    private final double ConstantX;
+    private final double ConstantY;
 
     private int AmountOfPoints;
 
     LinearFunction(Point p1, Point p2){
-        Point1 = p1;
-        Point2 = p2;
         double[] ab = calculateAB(p1, p2);
         A = ab[0];
         B = ab[1];
@@ -247,7 +189,6 @@ public class LinearFunction {
     public boolean belongs(Point p){
         if(A != 0 && B != 0 && p.y == (A*p.x) + B) return true;
         if(ConstantX != 0 && p.x == ConstantX) return true;
-        if(ConstantY != 0 && p.y == ConstantY) return true;
-        return false;
+        return ConstantY != 0 && p.y == ConstantY;
     }
 }

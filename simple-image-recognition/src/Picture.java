@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Picture {
+class Picture {
     private final int Width;
     private final int Height;
     private final String[] Data;

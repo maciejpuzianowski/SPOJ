@@ -1,6 +1,6 @@
 import java.awt.*;
 
-public class LinearFunction {
+class LinearFunction {
     private final double A;
     private final double B;
     private final double ConstantX;

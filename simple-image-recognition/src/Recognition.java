@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Recognition {
+class Recognition {
     final private ArrayList<String> Input;
     Recognition(){
         Input = new ArrayList<>();
