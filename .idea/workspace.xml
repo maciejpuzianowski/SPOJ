@@ -5,11 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/simple-image-recognition/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple-image-recognition/src/Picture.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/simple-image-recognition/src/Recognition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/simple-image-recognition/src/LinearFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/Picture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Recognition.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/Recognition.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +126,27 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
     <option name="LAST_COMMIT_MESSAGE" value="initial" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="5" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/simple-image-recognition/src/Recognition.java</url>
+          <line>15</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="Points" language="JAVA" />
+        <watch expression="lines.get(4)" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SPOJ$Main.ic" NAME="Main Coverage Results" MODIFIED="1657012443916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />

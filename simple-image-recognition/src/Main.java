@@ -7,7 +7,6 @@ public class Main {
         while(scanner.hasNextLine()){
             recognition.addInput(scanner.nextLine());
         }
-        recognition.dataToPictures();
-        recognition.recognize();
+        recognition.start();
     }
 }

@@ -1,63 +1,20 @@
 import java.util.ArrayList;
 
 public class Recognition {
-    private ArrayList<String> Input;
-    private ArrayList<Picture> Pictures;
-
+    final private ArrayList<String> Input;
     Recognition(){
         Input = new ArrayList<>();
-        Pictures = new ArrayList<>();
     }
 
     public void addInput(String s){
         Input.add(s);
     }
 
-    /*
-    *
-                    1
-
-                    5
-
-                    5 5
-                    x...x
-                    .x.x.
-                    ..x..
-                    .x.x.
-                    x...x
-                    5 5
-                    xxxxx
-                    x...x
-                    x...x
-                    x...x
-                    xxxxx
-                    6 6
-                    ..x...
-                    ..x...
-                    xxxxxx
-                    ..x...
-                    ..x...
-                    ......
-                    5 5
-                    .xxx.
-                    x...x
-                    x...x
-                    x...x
-                    .xxx.
-                    5 5
-                    .xxx.
-                    .x.x.
-                    .xxx.
-                    .....
-                    .....
-
-    *
-    * */
-
-    public void dataToPictures(){
+    public void start(){
         int testCases = Integer.parseInt(Input.get(0));
         int startLine = 2;
         for(int i = 1; i <= testCases; i++) {
+            ArrayList<Picture> pictures = new ArrayList<>();
             boolean firstGo = true;
             int numberOfPicturesInTest = 0;
             String[] data = new String[1];
@@ -72,7 +29,7 @@ public class Recognition {
                 int width = -1, height = -1;
                 while (k < Input.size() && Input.get(k).length() != 1){
                    var ref = Input.get(k);
-                   if (ref.length() == 3){
+                   if (ref.length() >= 3 && ref.contains(" ")){
                        if(height != -1){
                            counter = 0;
                        }
@@ -83,16 +40,17 @@ public class Recognition {
                    }
                    if (ref.length() == width){
                        data[counter] = ref;
-                       if(counter == data.length-1) Pictures.add(new Picture(width, height, data));
+                       if(counter == data.length-1) pictures.add(new Picture(width, height, data));
                        counter++;
                    }
                    k++;
                 }
+                if(numberOfPicturesInTest == pictures.size()) {
+                    for (Picture x: pictures) System.out.print(x.whatAmI());
+                    System.out.println();
+                    break;
+                }
             }
         }
-    }
-
-    public void recognize(){
-        for(var p: Pictures) System.out.println(p.whatAmI());
     }
 }

@@ -1,0 +1,253 @@
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        Recognition recognition = new Recognition();
+        while(scanner.hasNextLine()){
+            recognition.addInput(scanner.nextLine());
+        }
+        recognition.dataToPictures();
+        recognition.recognize();
+    }
+}
+
+public class Recognition {
+    private ArrayList<String> Input;
+    private ArrayList<Picture> Pictures;
+
+    Recognition(){
+        Input = new ArrayList<>();
+        Pictures = new ArrayList<>();
+    }
+
+    public void addInput(String s){
+        Input.add(s);
+    }
+
+    /*
+    *
+                    1
+
+                    5
+
+                    5 5
+                    x...x
+                    .x.x.
+                    ..x..
+                    .x.x.
+                    x...x
+                    5 5
+                    xxxxx
+                    x...x
+                    x...x
+                    x...x
+                    xxxxx
+                    6 6
+                    ..x...
+                    ..x...
+                    xxxxxx
+                    ..x...
+                    ..x...
+                    ......
+                    5 5
+                    .xxx.
+                    x...x
+                    x...x
+                    x...x
+                    .xxx.
+                    5 5
+                    .xxx.
+                    .x.x.
+                    .xxx.
+                    .....
+                    .....
+
+    *
+    * */
+
+    public void dataToPictures(){
+        int testCases = Integer.parseInt(Input.get(0));
+        int startLine = 2;
+        for(int i = 1; i <= testCases; i++) {
+            ArrayList<Picture> pictures = new ArrayList<>();
+            boolean firstGo = true;
+            int numberOfPicturesInTest = 0;
+            String[] data = new String[1];
+            for (int k = startLine; k < Input.size(); ) {
+                if(firstGo) {
+                    numberOfPicturesInTest = Integer.parseInt(Input.get(k));
+                    firstGo = false;
+                    k+=2;
+                    continue;
+                }
+                int counter = 0;
+                int width = -1, height = -1;
+                while (k < Input.size() && Input.get(k).length() != 1){
+                    var ref = Input.get(k);
+                    if (ref.length() == 3){
+                        if(height != -1){
+                            counter = 0;
+                        }
+                        var dim = ref.split(" ");
+                        height = Integer.parseInt(dim[0]);
+                        width = Integer.parseInt(dim[1]);
+                        data = new String[height];
+                    }
+                    if (ref.length() == width){
+                        data[counter] = ref;
+                        if(counter == data.length-1) pictures.add(new Picture(width, height, data));
+                        counter++;
+                    }
+                    k++;
+                }
+                if(numberOfPicturesInTest == pictures.size()) {
+                    Pictures.addAll(pictures);
+                    break;
+                }
+            }
+        }
+    }
+
+    public void recognize(){
+        for(var p: Pictures) System.out.println(p.whatAmI());
+    }
+}
+
+public class Picture {
+    private int Width;
+    private int Height;
+    private String[] Data;
+    private ArrayList<Point> Points;
+
+    Picture(int w, int h, String[] d){
+        Width = w;
+        Height = h;
+        Data = d;
+        Points = new ArrayList<>();
+        for(int i = 0; i < Data.length; i++){
+            for (int k = 0; k < Width; k++) {
+                if(Data[i].charAt(k) == 'x') Points.add(new Point(k+1, i+1));
+            }
+        }
+    }
+
+    public void info(){
+        System.out.println("width: " + Width);
+        System.out.println("height: " + Height);
+        for (String x: Data){
+            System.out.println(x);
+        }
+    }
+
+    public String whatAmI(){
+        String outcome = "x";
+        // order points in list by distance between each other
+        //Points.sort(new PointsByDistanceComparator(new Point(0,0)));
+//        var valuePairs = new ArrayList<PointAtanKeyValuePair>();
+//        for(var p: Points) valuePairs.add(new PointAtanKeyValuePair(p, Math.atan2(p.y, p.x)));
+//        for(var vp: valuePairs) System.out.println(vp.getPoint() + " | "+ vp.getAtan());
+        ArrayList<LinearFunction> lines = new ArrayList<>();
+        for(int i = 0; i < Points.size()-1;){
+            var line = new LinearFunction(Points.get(i), Points.get(i+1));
+            if(i == Points.size() - 2) {
+                lines.add(line);
+                break;
+            }
+            for(int k = i+2; k < Points.size(); k++){
+                if(!line.belongs(Points.get(k))){
+                    i=k;
+                    break;
+                }
+                line.incrementAmount();
+                i=k;
+            }
+            lines.add(line);
+        }
+        int parallelcounter = 0;
+        for(int i = 0 ; i < lines.size(); i++){
+            var iline = lines.get(i);
+            if(iline.getAmountOfPoints() == 2) continue;
+            for(int k = 0; k < lines.size(); k++){
+                var kline = lines.get(k);
+                if(iline.getAmountOfPoints() > 2 && kline.getAmountOfPoints() > 2){
+                    if(iline.getA() != 0 && iline.getA() == kline.getA()){
+                        parallelcounter++;
+                        lines.remove(kline);
+                    } else if((iline.getConstantX() != 0 && iline.getConstantX() == kline.getConstantX()) ||
+                            iline.getConstantY() != 0 && iline.getConstantY() == kline.getConstantY()){
+                        parallelcounter++;
+                        lines.remove(kline);
+                    }
+                }
+            }
+        }
+        if(parallelcounter > 1) outcome = "0";
+        return outcome;
+    }
+}
+
+public class LinearFunction {
+    private double A;
+    private double B;
+    private Point Point1;
+    private Point Point2;
+
+    private double ConstantX;
+    private double ConstantY;
+
+    private int AmountOfPoints;
+
+    LinearFunction(Point p1, Point p2){
+        Point1 = p1;
+        Point2 = p2;
+        double[] ab = calculateAB(p1, p2);
+        A = ab[0];
+        B = ab[1];
+        ConstantX = ab[2];
+        ConstantY = ab[3];
+        AmountOfPoints = 2;
+    }
+
+    public void incrementAmount(){
+        AmountOfPoints++;
+    }
+    public int getAmountOfPoints(){
+        return AmountOfPoints;
+    }
+    public double getA(){
+        return A;
+    }
+    public double getConstantX(){ return ConstantX; }
+    public double getConstantY(){
+        return ConstantY;
+    }
+
+    private double[] calculateAB(Point p1, Point p2){
+        double[] result = new double[4];
+        if(p1.x == p2.x) {
+            result[0] = 0;
+            result[1] = 0;
+            result[2] = p1.x;
+        } else if (p1.y == p2.y) {
+            result[0] = 0;
+            result[1] = 0;
+            result[3] = p1.y;
+        }else {
+            result[0] = (p2.y - p1.y) / (p2.x - p1.x);
+            result[1] = p1.y - (A * p1.x);
+            result[2] = 0;
+            result[3] = 0;
+        }
+        return result;
+    }
+
+    public boolean belongs(Point p){
+        if(A != 0 && B != 0 && p.y == (A*p.x) + B) return true;
+        if(ConstantX != 0 && p.x == ConstantX) return true;
+        if(ConstantY != 0 && p.y == ConstantY) return true;
+        return false;
+    }
+}
