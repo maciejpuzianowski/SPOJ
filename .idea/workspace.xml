@@ -5,11 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="s-i-r">
+      <change afterPath="$PROJECT_DIR$/src/IMGREC1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PRIME1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SAMER08F.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Recognition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/adding-reversed-numbers/adding-reversed-numbers.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/adding-reversed-numbers/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ADDREV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/feynman/feynman.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/feynman/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prime1/Prime1.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/prime1/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/simple-image-recognition.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/LinearFunction.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Picture.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/test.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +58,14 @@
       <recent name="C:\Users\mpuzianowski\IdeaProjects\SPOJ\simple-image-recognition\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (2)">
+  <component name="RunManager" selected="Application.PRIME1">
+    <configuration name="ADDREV" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ADDREV" />
+      <module name="SPOJ" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="feynman" />
@@ -70,8 +87,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PRIME1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PRIME1" />
+      <module name="SPOJ" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PRIME1" />
+        <item itemvalue="Application.ADDREV" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
