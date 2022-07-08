@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="initial">
+    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="s-i-r">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/LinearFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/LinearFunction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Recognition.java" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/Recognition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/Recognition.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/simple-image-recognition/src/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/simple-image-recognition/src/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -108,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657027337941</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="s-i-r">
+      <created>1657201887376</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1657201887376</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -124,7 +131,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial" />
+    <MESSAGE value="s-i-r" />
+    <option name="LAST_COMMIT_MESSAGE" value="s-i-r" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
