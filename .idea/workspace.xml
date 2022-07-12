@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="s-i-r">
-      <change afterPath="$PROJECT_DIR$/src/ONP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/SBANK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/COMMEDIA.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,7 +46,7 @@
       <recent name="C:\Users\mpuzianowski\IdeaProjects\SPOJ\simple-image-recognition\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SBANK">
+  <component name="RunManager" selected="Application.COMMEDIA">
     <configuration name="ADDREV" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ADDREV" />
       <module name="SPOJ" />
@@ -55,9 +54,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="simple-image-recognition" />
+    <configuration name="COMMEDIA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="COMMEDIA" />
+      <module name="SPOJ" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -85,11 +84,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.COMMEDIA" />
         <item itemvalue="Application.SBANK" />
         <item itemvalue="Application.ONP" />
         <item itemvalue="Application.PRIME1" />
         <item itemvalue="Application.ADDREV" />
-        <item itemvalue="Application.Main (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -158,12 +157,6 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="Points" language="JAVA" />
-        <watch expression="lines.get(4)" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SPOJ$Main.ic" NAME="Main Coverage Results" MODIFIED="1657012443916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
