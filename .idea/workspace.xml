@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="COMMEDIA">
-      <change afterPath="$PROJECT_DIR$/src/KAMIL.java" afterDir="false" />
+    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="KAMIL 234 optimized">
+      <change afterPath="$PROJECT_DIR$/src/ARITH.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +46,14 @@
       <recent name="C:\Users\mpuzianowski\IdeaProjects\SPOJ\simple-image-recognition\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.KAMIL">
+  <component name="RunManager" selected="Application.ARITH">
+    <configuration name="ARITH" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ARITH" />
+      <module name="SPOJ" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="COMMEDIA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="COMMEDIA" />
       <module name="SPOJ" />
@@ -68,13 +75,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PRIME1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PRIME1" />
-      <module name="SPOJ" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SBANK" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SBANK" />
       <module name="SPOJ" />
@@ -84,11 +84,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ARITH" />
         <item itemvalue="Application.KAMIL" />
         <item itemvalue="Application.COMMEDIA" />
         <item itemvalue="Application.SBANK" />
         <item itemvalue="Application.ONP" />
-        <item itemvalue="Application.PRIME1" />
       </list>
     </recent_temporary>
   </component>
@@ -136,7 +136,21 @@
       <option name="project" value="LOCAL" />
       <updated>1657620909586</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="KAMIL 248">
+      <created>1657629899812</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1657629899812</updated>
+    </task>
+    <task id="LOCAL-00007" summary="KAMIL 234 optimized">
+      <created>1657630076376</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1657630076376</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -154,7 +168,9 @@
     <MESSAGE value="initial" />
     <MESSAGE value="s-i-r" />
     <MESSAGE value="COMMEDIA" />
-    <option name="LAST_COMMIT_MESSAGE" value="COMMEDIA" />
+    <MESSAGE value="KAMIL 248" />
+    <MESSAGE value="KAMIL 234 optimized" />
+    <option name="LAST_COMMIT_MESSAGE" value="KAMIL 234 optimized" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
