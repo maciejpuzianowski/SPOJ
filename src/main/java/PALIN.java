@@ -10,7 +10,7 @@ public class PALIN {
         int cases = Integer.parseInt(r.readLine());
 
         for(int i = 0; i < cases; i++){
-            PalinSearch.search(r.readLine());
+            System.out.println(PalinSearch.search(r.readLine()));
         }
     }
 
@@ -73,7 +73,7 @@ public class PALIN {
             }
             return array;
         }
-        public static void search(String num){
+        public static String search(String num){
             char[] arr = num.toCharArray();
             char[] result;
             //storing borders in variables
@@ -147,8 +147,9 @@ public class PALIN {
                     j++;
                 }
             }
-            for(char c: result) System.out.print(c);
-            System.out.println();
+            var sb = new StringBuilder();
+            for(char c: result) sb.append(c);
+            return sb.toString();
         }
     }
 }
