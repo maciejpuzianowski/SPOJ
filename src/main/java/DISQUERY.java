@@ -55,14 +55,10 @@ class RoadMap{
         for(int i = 0; i < Route.length; i++){
             if(Route[i][0] == start ) {
                 startingIndex = i;
-                for (int k = startingIndex; k < Route.length; k++) {
+                if(stoppingIndex != 0) break;
+                for (int k = startingIndex+1; k < Route.length; k++) {
                     if(Route[k][0] == start) {
-                        lca = Integer.MAX_VALUE;
                         startingIndex = k;
-                    }
-                    if(Route[i][0] == stop) {
-                        lca = Integer.MAX_VALUE;
-                        stoppingIndex = i;
                     }
                     lca = Math.min(lca, Route[k][1]);
                     if (Route[k][0] == stop) {
@@ -70,25 +66,85 @@ class RoadMap{
                         break;
                     }
                 }
-                if(stoppingIndex < startingIndex){
-                    var temp = stoppingIndex;
-                    stoppingIndex = startingIndex;
-                    startingIndex = temp;
-                }
                 break;
             }
             if(Route[i][0] == stop) {
                 stoppingIndex = i;
             }
         }
+
+        if(stoppingIndex < startingIndex){
+            var temp = stoppingIndex;
+            stoppingIndex = startingIndex;
+            startingIndex = temp;
+        }
+
         for(int i = startingIndex; i <= stoppingIndex; i++){
-            if(lca < Route[i][1]) {
-                min = Math.min(min, Map[Route[i][0] - 1].getDistanceFromRoot());
-                max = Math.max(max, Map[Route[i][0] - 1].getDistanceFromRoot());
+            lca = Math.min(lca, Route[i][1]);
+        }
+
+        var node1 = Map[Route[startingIndex][0]-1];
+        int nodesRoot1;
+        var node2 = Map[Route[stoppingIndex][0]-1];
+        int nodesRoot2;
+        int maxLca = Route[startingIndex][1];
+        var space = Math.max(Route[startingIndex][1], Route[stoppingIndex][1])*2;
+        int[] path = new int[space];
+        int i = 0;
+        do{
+            if(i == 0 && node1.getRoot() == null){
+                path[i++] = node1.getDistanceFromRoot();
+                break;
+            }
+            else {
+                nodesRoot1 = node1.getRoot().getName();
+            }
+            path[i++] = node1.getDistanceFromRoot();
+            node1 = Map[nodesRoot1-1];
+            if(node1.getRoot() == null) {
+                path[i++] = node1.getDistanceFromRoot();
+                break;
+            }
+        }while(--maxLca > lca);
+
+        maxLca = Route[stoppingIndex][1];
+        int k = i;
+        do{
+            if(k == i && node2.getRoot() == null){
+                path[k] = node2.getDistanceFromRoot();
+                break;
+            }
+            else {
+                nodesRoot2 = node2.getRoot().getName();
+            }
+            path[k++] = node2.getDistanceFromRoot();
+            node2 = Map[nodesRoot2-1];
+            if(node2.getRoot() == null) {
+                path[k] = node2.getDistanceFromRoot();
+                break;
+            }
+        }while(--maxLca > lca);
+
+        for (int j: path){
+            if(j != 0) {
+                min = Math.min(min, j);
+                max = Math.max(max, j);
             }
         }
+
+//        int tempMin = Integer.MAX_VALUE;
+//        int tempMax = 0;
+//        var currRoot = Map[Route[startingIndex][0]-1].getRoot().getName();
+//        for(int i = startingIndex; i <= stoppingIndex; i++){
+//
+//            if(lca < Route[i][1]) {
+//                min = Math.min(min, Map[Route[i][0] - 1].getDistanceFromRoot());
+//                max = Math.max(max, Map[Route[i][0] - 1].getDistanceFromRoot());
+//            }
+//        }
         System.out.println(min +" "+ max);
     }
+
 
     public void build(String[] journeys, int citiesNo) {
         Map = new City[citiesNo];
