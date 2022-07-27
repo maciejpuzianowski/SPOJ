@@ -44,44 +44,100 @@ class RoadMap{
     }
 
     private void printResults(String s) {
+        //getting route
         var split = s.split(" ");
         var start = Integer.parseInt(split[0]);
         var stop = Integer.parseInt(split[1]);
+
+        //defining needed variables
         int max = 0;
         int min = Integer.MAX_VALUE;
         int lca = Integer.MAX_VALUE;
-        int startingIndex = 0;
-        int stoppingIndex = 0;
-        for(int i = 0; i < Route.length; i++){
-            if(Route[i][0] == start ) {
-                startingIndex = i;
-                if(stoppingIndex != 0) break;
-                for (int k = startingIndex+1; k < Route.length; k++) {
-                    if(Route[k][0] == start) {
-                        startingIndex = k;
-                    }
-                    lca = Math.min(lca, Route[k][1]);
-                    if (Route[k][0] == stop) {
-                        stoppingIndex = k;
-                        break;
-                    }
-                }
-                break;
-            }
-            if(Route[i][0] == stop) {
-                stoppingIndex = i;
-            }
-        }
 
+        //looking for appropriate indices
+        var indices = appropriateIndices(start, stop);
+        var startingIndex = indices[0];
+        var stoppingIndex = indices[1];
+
+        //we want to have starting index lower than stopping
         if(stoppingIndex < startingIndex){
             var temp = stoppingIndex;
             stoppingIndex = startingIndex;
             startingIndex = temp;
         }
 
+        //calculating lowest common ancestor
         for(int i = startingIndex; i <= stoppingIndex; i++){
             lca = Math.min(lca, Route[i][1]);
         }
+
+        //finding the shortest path
+        var path = shortestPathToArray(startingIndex, stoppingIndex, lca);
+
+        //looking for min and max then print
+        for (int j: path){
+            if(j != 0) {
+                min = Math.min(min, j);
+                max = Math.max(max, j);
+            }
+        }
+        System.out.println(min +" "+ max);
+    }
+
+    private int[] appropriateIndices(int start, int stop){
+
+        int startingIndex = 0;
+        int stoppingIndex = 0;
+
+        //looking for appropriate indices for cities by iterating through eulers route
+        for(int i = 0; i < Route.length; i++){
+
+            //start
+            if(Route[i][0] == start ) {
+
+                startingIndex = i;
+
+                //if we already have stopping index then we break
+                if(stoppingIndex != 0) break;
+
+                //looking for stopping index if we have not found yet and
+                // checking whether we are going to find starting index closer to the stop
+                for (int k = startingIndex+1; k < Route.length; k++) {
+
+                    if(Route[k][0] == start) {
+                        startingIndex = k;
+                    }
+
+                    if (Route[k][0] == stop) {
+                        stoppingIndex = k;
+                        break;
+                    }
+
+                }
+                break;
+            }
+
+            //stop
+            else if(Route[i][0] == stop) {
+                stoppingIndex = i;
+            }
+
+        }
+
+        //we want to have starting index lower than stopping
+        if(stoppingIndex < startingIndex){
+            var temp = stoppingIndex;
+            stoppingIndex = startingIndex;
+            startingIndex = temp;
+        }
+
+        return new int[]{startingIndex, stoppingIndex};
+    }
+
+    private int[] shortestPathToArray(int startingIndex, int stoppingIndex, int lca){
+
+        //we are looking for shortest path by getting the path to the lowest common ancestor
+        //for both cities
 
         var node1 = Map[Route[startingIndex][0]-1];
         int nodesRoot1;
@@ -91,6 +147,7 @@ class RoadMap{
         var space = Math.max(Route[startingIndex][1], Route[stoppingIndex][1])*2;
         int[] path = new int[space];
         int i = 0;
+
         do{
             if(i == 0 && node1.getRoot() == null){
                 path[i++] = node1.getDistanceFromRoot();
@@ -125,39 +182,26 @@ class RoadMap{
             }
         }while(--maxLca > lca);
 
-        for (int j: path){
-            if(j != 0) {
-                min = Math.min(min, j);
-                max = Math.max(max, j);
-            }
-        }
-
-//        int tempMin = Integer.MAX_VALUE;
-//        int tempMax = 0;
-//        var currRoot = Map[Route[startingIndex][0]-1].getRoot().getName();
-//        for(int i = startingIndex; i <= stoppingIndex; i++){
-//
-//            if(lca < Route[i][1]) {
-//                min = Math.min(min, Map[Route[i][0] - 1].getDistanceFromRoot());
-//                max = Math.max(max, Map[Route[i][0] - 1].getDistanceFromRoot());
-//            }
-//        }
-        System.out.println(min +" "+ max);
+        return path;
     }
 
-
+    //creating graph out of input
     public void build(String[] journeys, int citiesNo) {
         Map = new City[citiesNo];
+
+        //creating cities
         for(int i = 0; i < citiesNo; i++){
             Map[i] = new City(i+1);
         }
 
+        //adding routes between cities
         for (int i = journeys.length-1; i >= 0; i--){
             var split = journeys[i].split(" ");
             int root = Integer.parseInt(split[0]);
             int child = Integer.parseInt(split[1]);
             int distance = Integer.parseInt(split[2]);
 
+            //if child has not root then we change child with root
             if(Map[child-1].getRoot() != null){
                 var temp = child;
                 child = root;
@@ -170,6 +214,7 @@ class RoadMap{
         }
     }
 
+    //creating eulers route
     public void getEulersRoute(int cities){
         Route = new int[(cities*2)-1][2];
         var city = Map[0];
@@ -215,6 +260,8 @@ class City{
 
     public void addChild(City child){
         Children.add(child);
+
+        //sorting children by name
         Children = Children.stream().sorted(Comparator.comparingInt(City::getName)).collect(Collectors.toCollection(LinkedHashSet::new));
     }
 
