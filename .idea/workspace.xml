@@ -7,10 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="GEORGE in progress, DISQUERY almost done">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="I genuinely think DISQUERY is ok">
+      <change afterPath="$PROJECT_DIR$/src/main/java/PIVAL.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DISQUERY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DISQUERY.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EVAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EVAL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GEORGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GEORGE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +65,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DISQUERY">
+  <component name="RunManager" selected="Application.PIVAL">
     <configuration name="DISQUERY" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="DISQUERY" />
       <module name="SPOJ" />
@@ -78,8 +80,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HASHIT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HASHIT" />
+    <configuration name="PIVAL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PIVAL" />
       <module name="SPOJ" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -107,11 +109,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DISQUERY" />
+        <item itemvalue="Application.PIVAL" />
         <item itemvalue="Application.GEORGE" />
+        <item itemvalue="Application.DISQUERY" />
         <item itemvalue="JUnit.HashHelperTest.delete" />
         <item itemvalue="JUnit.HashHelperTest.add" />
-        <item itemvalue="Application.HASHIT" />
       </list>
     </recent_temporary>
   </component>
@@ -201,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658410248688</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="I genuinely think DISQUERY is ok">
+      <created>1658947638707</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1658947638707</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -213,6 +222,17 @@
               <option name="CUSTOM_BOOLEAN_PROPERTIES">
                 <map>
                   <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
@@ -231,7 +251,8 @@
     <MESSAGE value="MAVEN + EVAL 16116" />
     <MESSAGE value="PALIN" />
     <MESSAGE value="PALIN tests + HASHIT /w tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="PALIN tests + HASHIT /w tests" />
+    <MESSAGE value="I genuinely think DISQUERY is ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="I genuinely think DISQUERY is ok" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -240,14 +261,10 @@
           <url>file://$PROJECT_DIR$/src/main/java/EVAL.java</url>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/GEORGE.java</url>
-          <line>92</line>
-          <properties class="Itinerary" method="time">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="141" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/PIVAL.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -290,12 +307,14 @@
         <watch expression="Map" language="JAVA" />
         <watch expression="this" />
         <watch expression="Route" language="JAVA" />
+        <watch expression="Route" language="JAVA" />
+        <watch expression="this.Map.Nodes[1].Neighbours.entrySet().toArray()[0]" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/SPOJ$EVAL.ic" NAME="EVAL Coverage Results" MODIFIED="1657881826627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/SPOJ$GEORGE.ic" NAME="GEORGE Coverage Results" MODIFIED="1658762393230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/SPOJ$GEORGE.ic" NAME="GEORGE Coverage Results" MODIFIED="1659010456674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/SPOJ$Main.ic" NAME="Main Coverage Results" MODIFIED="1657012443916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

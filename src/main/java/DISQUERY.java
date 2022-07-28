@@ -148,6 +148,11 @@ class RoadMap{
         int[] path = new int[space];
         int i = 0;
 
+        //check if they are neighbours
+        if(startingIndex + 1 == stoppingIndex){
+            return Route[stoppingIndex][1] > Route[startingIndex][1] ? new int[] {Map[Route[stoppingIndex][0]-1].getDistanceFromRoot()} : new int[] {Map[Route[startingIndex][0]-1].getDistanceFromRoot()};
+        }
+
         do{
             if(i == 0 && node1.getRoot() == null){
                 path[i++] = node1.getDistanceFromRoot();
@@ -217,7 +222,13 @@ class RoadMap{
     //creating eulers route
     public void getEulersRoute(int cities){
         Route = new int[(cities*2)-1][2];
-        var city = Map[0];
+        City city = Map[0];
+        for(City c : Map){
+            if(c.getRoot() == null){
+                city = c;
+                break;
+            }
+        }
         depthFirstTraversal(city, 0, 1);
     }
 
