@@ -1,8 +1,11 @@
+package problems;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PALINTest {
+
     @Test
     void palinTest(){
         assertEquals("818", PALIN.PalinSearch.search("808"));
@@ -17,4 +20,5 @@ class PALINTest {
         assertEquals("1", PALIN.PalinSearch.search("0"));
         assertEquals("2002", PALIN.PalinSearch.search("1991"));
     }
+
 }

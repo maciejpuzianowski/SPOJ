@@ -1,3 +1,5 @@
+package problems;
+
 import java.util.*;
 
 public class GEORGE {
@@ -33,7 +35,7 @@ public class GEORGE {
         }
 
         var itinerary = new Itinerary(intersections, streets, lukasStartingPoint, lukasDestination, differenceInStartingTimes, georgesIntersections, routeArr, map);
-        itinerary.time();
+        System.out.println(itinerary.time());
 
     }
 }
@@ -78,81 +80,64 @@ class Itinerary{
         Map = new Graph(nodes);
     }
 
-    public void time(){
+    public int time(){
         int time = -DifferenceInStartingTimes;
+        var blockedStreetsTime = new int[GeorgesIntersections-1][3];
+
+        for(int i = 0; i < GeorgesIntersections-1; i++){
+            blockedStreetsTime[i][0] = GeorgesRoute[i];
+            blockedStreetsTime[i][1] = GeorgesRoute[i+1];
+            blockedStreetsTime[i][2] = Map.getNodeByName(GeorgesRoute[i]).getNeighbours().get(Map.getNodeByName(GeorgesRoute[i+1]));
+        }
 
         var lukasPath = Map.shortestPathBetween(Map.getNodeByName(LukasStartingPoint), Map.getNodeByName(LukasDestination));
+        var currentLukasStreet = lukasPath.subList(0, 2);
+        var endingLukasStreet = lukasPath.subList(lukasPath.size()-2, lukasPath.size());
 
-        var georgesPath = new ArrayList<Node>();
-        for(var i: GeorgesRoute){
-            georgesPath.add(Map.getNodeByName(i));
-        }
-
-        int i = 0; //georges path index
-        int j = 0; //lukas path index
-        int[] georgeCurrentStreet = new int[2];
-        int[] lukasCurrentStreet = new int[2];
-        int georgeCurrentStreetDuration = -1;
-        int lukasCurrentStreetDuration = -1;
-
+        int georgesIndex = 0;
+        int georgesTime = 0;
+        int lukasIndex = 1;
+        int lukasTime = 0;
         while(true){
-            //george starting first -- getting his route
-            if(i+1 < GeorgesIntersections && georgeCurrentStreetDuration <= 0) {
-                var sub = georgesPath.subList(i, i + 2);
-                georgeCurrentStreet[0] = sub.get(0).getName();
-                georgeCurrentStreet[1] = sub.get(1).getName();
-                georgeCurrentStreetDuration = Map.pathDuration(sub);
-                i++;
+//            georgesTime++;
+            if(georgesIndex + 1 < GeorgesIntersections - 1 && georgesTime == blockedStreetsTime[georgesIndex][2]){
+                georgesIndex++;
+                georgesTime = 0;
             }
 
-            //if it is time for luka to start -- getting his route
-            if(time >= 0 && lukasCurrentStreetDuration <= 0){
-                var sub = lukasPath.subList(j, j + 2);
-                if(georgeCurrentStreet[0] != sub.get(1).getName()) {
-                    lukasCurrentStreet[0] = sub.get(0).getName();
-                    lukasCurrentStreet[1] = sub.get(1).getName();
-                    lukasCurrentStreetDuration = Map.pathDuration(sub);
-                    j++;
+            if(lukasTime >= Map.pathDuration(currentLukasStreet) && lukasIndex + 1 < lukasPath.size()) {
+
+                var lukasStart = currentLukasStreet.get(0).getName();
+                var lukasStop = currentLukasStreet.get(1).getName();
+                var georgeStart = blockedStreetsTime[georgesIndex][0];
+                var georgeStop = blockedStreetsTime[georgesIndex][1];
+
+                if (    (georgesTime > blockedStreetsTime[georgesIndex][2]) ||
+                        (lukasStop == georgeStart && georgesTime >= 0) ||
+                        (georgeStart == lukasStart) ||
+                        (lukasStop == georgeStop && lukasPath.get(lukasIndex+1).getName() != georgeStart && georgesTime <= blockedStreetsTime[georgesIndex][2]) ||
+                        (lukasStop != georgeStop && lukasStop != georgeStart)
+                ) {
+                    currentLukasStreet = lukasPath.subList(lukasIndex, lukasIndex + 2);
+                    lukasTime = 0;
+                    lukasIndex++;
                 }
+
             }
 
-            //if luka is on his way and his starting point is george`s destination -- able to travel
-            if (lukasCurrentStreetDuration > 0 && lukasCurrentStreet[0] == georgeCurrentStreet[1])
-                lukasCurrentStreetDuration--;
+            boolean sameStreet = currentLukasStreet.get(0).getName() == blockedStreetsTime[georgesIndex][0] && currentLukasStreet.get(1).getName() == blockedStreetsTime[georgesIndex][1];
+            if (time >= 0 && lukasTime < Map.pathDuration(currentLukasStreet)) {
+                if((!sameStreet || georgesTime >= blockedStreetsTime[georgesIndex][2] || georgesTime < lukasTime))
+                    lukasTime++;
+            }
 
-            //if luka is on his way and his starting point is not george`s starting point, but they have same destination
-            //then we are able to travel only if george will arrive later than us
-            else if (lukasCurrentStreetDuration > 0 && lukasCurrentStreet[0] != georgeCurrentStreet[0] && lukasCurrentStreet[1] == georgeCurrentStreet[1] && georgeCurrentStreetDuration > 0
-            && georgeCurrentStreetDuration > lukasCurrentStreetDuration)
-                lukasCurrentStreetDuration--;
-
-            //if luka is on his way, and they are not disturbing each other
-            else if (lukasCurrentStreetDuration > 0 && lukasCurrentStreet[0] != georgeCurrentStreet[0] && lukasCurrentStreet[1] != georgeCurrentStreet[1])
-                lukasCurrentStreetDuration--;
-
-            //if luka is on his way, and they have same starting points and different destinations -- we are able to travel only if george will arrive later than us
-            else if (lukasCurrentStreetDuration > 0 && lukasCurrentStreet[0] == georgeCurrentStreet[0] && lukasCurrentStreet[1] != georgeCurrentStreet[1] && georgeCurrentStreetDuration > 0)
-                lukasCurrentStreetDuration--;
-
-            //if luka is on his way, and they are on the same street -- we can travel only if luka is already on that street
-            else if (lukasCurrentStreetDuration > 0 && lukasCurrentStreet[0] == georgeCurrentStreet[0] && lukasCurrentStreet[1] == georgeCurrentStreet[1] && georgeCurrentStreetDuration > lukasCurrentStreetDuration)
-                lukasCurrentStreetDuration--;
-
-            //if luka is on his way, and george has finished his journey - luka is free to go
-            else if (lukasCurrentStreetDuration > 0 && georgeCurrentStreet[1] == georgesPath.get(georgesPath.size()-1).getName() && georgeCurrentStreetDuration <= 0) lukasCurrentStreetDuration--;
-
-            //luka end
-            if (lukasCurrentStreet[1] == LukasDestination && lukasCurrentStreetDuration == 0) break;
-
-
-            georgeCurrentStreetDuration--;
+            if(lukasTime == Map.pathDuration(currentLukasStreet) && currentLukasStreet.get(0) == endingLukasStreet.get(0) && currentLukasStreet.get(1) == endingLukasStreet.get(1)) break;
+            georgesTime++;
             time++;
         }
-        //last second
         time++;
-        System.out.println(time);
+        return time;
     }
-
 }
 
 class Graph {

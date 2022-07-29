@@ -1,14 +1,16 @@
+package challanges;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class PIVAL {
     public static void main(String[] args) {
-        PiHelper.calculate(30000);
+        System.out.println(PiHelper.calculate(30000));
     }
 }
 
 class PiHelper{
-    public static void calculate(int decimals){
+    public static String calculate(int decimals){
 
         //https://en.wikipedia.org/wiki/Gauss%E2%80%93Legendre_algorithm
 
@@ -20,7 +22,7 @@ class PiHelper{
 
         long start = System.currentTimeMillis();
         long stop = 0;
-        while(stop-start < 3500) {
+        while(stop-start < 10000) {
             tempA = a;
 
             a = tempA.add(b).divide(new BigDecimal(2), decimals, RoundingMode.HALF_UP);
@@ -30,7 +32,7 @@ class PiHelper{
             stop = System.currentTimeMillis();
         }
 
-        System.out.println(a.add(b).multiply(a.add(b)).divide(new BigDecimal(4).multiply(t), decimals, RoundingMode.HALF_UP));
+        return a.add(b).multiply(a.add(b)).divide(new BigDecimal(4).multiply(t), decimals, RoundingMode.HALF_UP).toString();
     }
 
     private static BigDecimal sqrt(BigDecimal value, int scale) {

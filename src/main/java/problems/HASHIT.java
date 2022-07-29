@@ -1,4 +1,5 @@
-import java.security.Key;
+package problems;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -141,7 +142,7 @@ class HashHelper{
 
 
 /*
-* Simple KeyValuePair class
+* Simple problems.KeyValuePair class
 * */
 class KeyValuePair<K, V> implements Map.Entry<K, V>
 {

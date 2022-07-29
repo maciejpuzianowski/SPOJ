@@ -1,3 +1,5 @@
+package challanges;
+
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -193,7 +195,7 @@ class LinearFunction {
             result[1] = 0;
             result[3] = p1.y;
         }else {
-            result[0] = (p2.y - p1.y) / (p2.x - p1.x);
+            result[0] = (double)(p2.y - p1.y) / (p2.x - p1.x);
             result[1] = p1.y - (A * p1.x);
             result[2] = 0;
             result[3] = 0;

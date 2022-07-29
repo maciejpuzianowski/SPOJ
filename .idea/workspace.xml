@@ -7,12 +7,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="I genuinely think DISQUERY is ok">
-      <change afterPath="$PROJECT_DIR$/src/main/java/PIVAL.java" afterDir="false" />
+    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="Pival +- 30k + GEORGE and DISQUERY improvements (not accepted)">
+      <change afterPath="$PROJECT_DIR$/src/test/java/challanges/PiHelperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/problems/DISQUERYTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/problems/GEORGETest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/problems/HashHelperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/problems/PALINTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DISQUERY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DISQUERY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EVAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EVAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GEORGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/GEORGE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ADDREV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/ADDREV.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ARITH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/ARITH.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/COMMEDIA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/COMMEDIA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DISQUERY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/DISQUERY.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EVAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/challanges/EVAL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/GEORGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/GEORGE.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/HASHIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/HASHIT.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/IMGREC1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/challanges/IMGREC1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/KAMIL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/challanges/KAMIL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ONP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/ONP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PALIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/PALIN.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PIVAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/challanges/PIVAL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/PRIME1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/PRIME1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SAMER08F.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/SAMER08F.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/SBANK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/SBANK.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HashHelperTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PALINTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ADDREV.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ARITH.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/COMMEDIA.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/EVAL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/EulersNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/IMGREC1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/KAMIL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/LinearFunction.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ONP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PALIN$PalinSearch.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PALIN.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/PRIME1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Picture.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SAMER08F.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/SBANK.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +55,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -62,46 +95,84 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="problems" />
+      <recent name="challanges" />
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PIVAL">
-    <configuration name="DISQUERY" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DISQUERY" />
-      <module name="SPOJ" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GEORGE" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="GEORGE" />
-      <module name="SPOJ" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DISQUERYTest.result">
     <configuration name="PIVAL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="PIVAL" />
+      <option name="MAIN_CLASS_NAME" value="challanges.PIVAL" />
       <module name="SPOJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="challanges.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashHelperTest.add" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DISQUERYTest.result" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SPOJ" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HashHelperTest" />
-      <option name="METHOD_NAME" value="add" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="problems.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="problems" />
+      <option name="MAIN_CLASS_NAME" value="problems.DISQUERYTest" />
+      <option name="METHOD_NAME" value="result" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HashHelperTest.delete" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GEORGETest.time" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SPOJ" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HashHelperTest" />
-      <option name="METHOD_NAME" value="delete" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="problems.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="problems" />
+      <option name="MAIN_CLASS_NAME" value="problems.GEORGETest" />
+      <option name="METHOD_NAME" value="time" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PALINTest.palinTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SPOJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="problems.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="problems" />
+      <option name="MAIN_CLASS_NAME" value="problems.PALINTest" />
+      <option name="METHOD_NAME" value="palinTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PiHelperTest.calculate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SPOJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="challanges.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="challanges" />
+      <option name="MAIN_CLASS_NAME" value="challanges.PiHelperTest" />
+      <option name="METHOD_NAME" value="calculate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -109,11 +180,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DISQUERYTest.result" />
+        <item itemvalue="JUnit.GEORGETest.time" />
+        <item itemvalue="JUnit.PiHelperTest.calculate" />
         <item itemvalue="Application.PIVAL" />
-        <item itemvalue="Application.GEORGE" />
-        <item itemvalue="Application.DISQUERY" />
-        <item itemvalue="JUnit.HashHelperTest.delete" />
-        <item itemvalue="JUnit.HashHelperTest.add" />
+        <item itemvalue="JUnit.PALINTest.palinTest" />
       </list>
     </recent_temporary>
   </component>
@@ -210,7 +281,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658947638707</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Pival +- 30k + GEORGE and DISQUERY improvements (not accepted)">
+      <created>1659022155100</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1659022155100</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,7 +307,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="HEAD" />
+                        <option value="master" />
                       </list>
                     </value>
                   </entry>
@@ -252,19 +330,15 @@
     <MESSAGE value="PALIN" />
     <MESSAGE value="PALIN tests + HASHIT /w tests" />
     <MESSAGE value="I genuinely think DISQUERY is ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="I genuinely think DISQUERY is ok" />
+    <MESSAGE value="Pival +- 30k + GEORGE and DISQUERY improvements (not accepted)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pival +- 30k + GEORGE and DISQUERY improvements (not accepted)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/EVAL.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/challanges/EVAL.java</url>
           <option name="timeStamp" value="65" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/PIVAL.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="155" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

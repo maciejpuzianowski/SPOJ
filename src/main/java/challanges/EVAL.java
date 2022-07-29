@@ -1,3 +1,5 @@
+package challanges;
+
 import java.util.Arrays;
 public class EVAL {
     public static void main(String[] args) {

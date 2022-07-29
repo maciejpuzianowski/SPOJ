@@ -1,3 +1,5 @@
+package problems;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -25,8 +27,10 @@ public class DISQUERY {
             journeys[i] = scanner.nextLine();
         }
 
-        new RoadMap(streets, cities, journeys);
-
+        var roadMap = new RoadMap(streets, cities);
+        for(var s: journeys) {
+            System.out.println(roadMap.result(s));
+        }
     }
 }
 
@@ -35,15 +39,13 @@ class RoadMap{
     private City[] Map;
     private int[][] Route;
 
-    public RoadMap(String[] map, int cities, String[] journeys) {
+    public RoadMap(String[] map, int cities) {
         build(map, cities);
         getEulersRoute(cities);
-        for(var s: journeys) {
-            printResults(s);
-        }
+
     }
 
-    private void printResults(String s) {
+    public String result(String s) {
         //getting route
         var split = s.split(" ");
         var start = Integer.parseInt(split[0]);
@@ -81,7 +83,7 @@ class RoadMap{
                 max = Math.max(max, j);
             }
         }
-        System.out.println(min +" "+ max);
+        return min +" "+ max;
     }
 
     private int[] appropriateIndices(int start, int stop){
