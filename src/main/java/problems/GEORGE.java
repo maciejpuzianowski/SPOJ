@@ -81,7 +81,10 @@ class Itinerary{
     }
 
     public int time(){
+        //we start with minus difference so luka starts at time >= 0
         int time = -DifferenceInStartingTimes;
+
+        //getting georges route and time it takes
         var blockedStreetsTime = new int[GeorgesIntersections-1][3];
 
         for(int i = 0; i < GeorgesIntersections-1; i++){
@@ -90,33 +93,46 @@ class Itinerary{
             blockedStreetsTime[i][2] = Map.getNodeByName(GeorgesRoute[i]).getNeighbours().get(Map.getNodeByName(GeorgesRoute[i+1]));
         }
 
+        //lukas path
         var lukasPath = Map.shortestPathBetween(Map.getNodeByName(LukasStartingPoint), Map.getNodeByName(LukasDestination));
         var currentLukasStreet = lukasPath.subList(0, 2);
         var endingLukasStreet = lukasPath.subList(lukasPath.size()-2, lukasPath.size());
 
+        //variables needed to iterate
         int georgesIndex = 0;
         int georgesTime = 0;
         int lukasIndex = 1;
         int lukasTime = 0;
+
+        //iterating time
         while(true){
-//            georgesTime++;
+            //if george arrived to intersection change blocked street
             if(georgesIndex + 1 < GeorgesIntersections - 1 && georgesTime == blockedStreetsTime[georgesIndex][2]){
                 georgesIndex++;
                 georgesTime = 0;
             }
 
+            //if luka arrived to his intersection - we check whether we can enter next, if so we do
             if(lukasTime >= Map.pathDuration(currentLukasStreet) && lukasIndex + 1 < lukasPath.size()) {
 
+                //variables to increase readability
                 var lukasStart = currentLukasStreet.get(0).getName();
                 var lukasStop = currentLukasStreet.get(1).getName();
+                var lukasNextStop = lukasPath.get(lukasIndex+1).getName();
                 var georgeStart = blockedStreetsTime[georgesIndex][0];
                 var georgeStop = blockedStreetsTime[georgesIndex][1];
 
-                if (    (georgesTime > blockedStreetsTime[georgesIndex][2]) ||
-                        (lukasStop == georgeStart && georgesTime >= 0) ||
-                        (georgeStart == lukasStart) ||
-                        (lukasStop == georgeStop && lukasPath.get(lukasIndex+1).getName() != georgeStart && georgesTime <= blockedStreetsTime[georgesIndex][2]) ||
-                        (lukasStop != georgeStop && lukasStop != georgeStart)
+                //luka goes if ....
+                if (    (georgesTime > blockedStreetsTime[georgesIndex][2]) || // this means george has ended his journey so luka is free to go
+
+                        (lukasStop == georgeStart && georgesTime >= 0) || // if luka`s stop is a new george`s start luka is free to go
+
+                        (georgeStart == lukasStart) || // if george`s start is the same as luka`s then luka can go if the stops are different
+
+                        // if their stops are the same but george has not finished his route, then luka can go if he is going another way
+                        (lukasStop == georgeStop && lukasNextStop != georgeStart && georgesTime <= blockedStreetsTime[georgesIndex][2]) ||
+
+                        (lukasStop != georgeStop && lukasStop != georgeStart) //no interruptions
                 ) {
                     currentLukasStreet = lukasPath.subList(lukasIndex, lukasIndex + 2);
                     lukasTime = 0;
@@ -126,15 +142,24 @@ class Itinerary{
             }
 
             boolean sameStreet = currentLukasStreet.get(0).getName() == blockedStreetsTime[georgesIndex][0] && currentLukasStreet.get(1).getName() == blockedStreetsTime[georgesIndex][1];
+
+            //luka is on his way
             if (time >= 0 && lukasTime < Map.pathDuration(currentLukasStreet)) {
+
+                //if they are not on the same street or george has finished his journey luka can go
+                //additional condition lets luka go when he is on the same street, but he entered it before george
                 if((!sameStreet || georgesTime >= blockedStreetsTime[georgesIndex][2] || georgesTime < lukasTime))
                     lukasTime++;
+
             }
 
+            //luka finishes his journey
             if(lukasTime == Map.pathDuration(currentLukasStreet) && currentLukasStreet.get(0) == endingLukasStreet.get(0) && currentLukasStreet.get(1) == endingLukasStreet.get(1)) break;
+
             georgesTime++;
             time++;
         }
+        //last second because of finish
         time++;
         return time;
     }

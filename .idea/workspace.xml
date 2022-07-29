@@ -7,45 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="Pival +- 30k + GEORGE and DISQUERY improvements (not accepted)">
-      <change afterPath="$PROJECT_DIR$/src/test/java/challanges/PiHelperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/problems/DISQUERYTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/problems/GEORGETest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/problems/HashHelperTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/problems/PALINTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ADDREV.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/ADDREV.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ARITH.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/ARITH.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/COMMEDIA.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/COMMEDIA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DISQUERY.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/DISQUERY.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EVAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/challanges/EVAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/GEORGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/GEORGE.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/HASHIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/HASHIT.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/IMGREC1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/challanges/IMGREC1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/KAMIL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/challanges/KAMIL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ONP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/ONP.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PALIN.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/PALIN.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PIVAL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/challanges/PIVAL.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/PRIME1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/PRIME1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SAMER08F.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/SAMER08F.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/SBANK.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/SBANK.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HashHelperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PALINTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ADDREV.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ARITH.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/COMMEDIA.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EVAL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EulersNumber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/IMGREC1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/KAMIL.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LinearFunction.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ONP.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PALIN$PalinSearch.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PALIN.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PRIME1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Picture.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SAMER08F.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SBANK.class" beforeDir="false" />
+    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="Structure improvement + GEORGE Accepted">
+      <change beforePath="$PROJECT_DIR$/src/main/java/problems/GEORGE.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/problems/GEORGE.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,7 +251,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659022155100</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Structure improvement + GEORGE Accepted">
+      <created>1659095189438</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1659095189438</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -331,7 +301,8 @@
     <MESSAGE value="PALIN tests + HASHIT /w tests" />
     <MESSAGE value="I genuinely think DISQUERY is ok" />
     <MESSAGE value="Pival +- 30k + GEORGE and DISQUERY improvements (not accepted)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Pival +- 30k + GEORGE and DISQUERY improvements (not accepted)" />
+    <MESSAGE value="Structure improvement + GEORGE Accepted" />
+    <option name="LAST_COMMIT_MESSAGE" value="Structure improvement + GEORGE Accepted" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
