@@ -7,9 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="GEORGE comments">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="Add README.md">
+      <change afterPath="$PROJECT_DIR$/src/main/java/challanges/SUD.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOJ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SPOJ.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,7 +66,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GEORGE">
+  <component name="RunManager" selected="Application.SUD">
     <configuration name="DISQUERY" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="problems.DISQUERY" />
       <module name="SPOJ" />
@@ -84,6 +86,19 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="problems.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SUD" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="challanges.SUD" />
+      <module name="SPOJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="challanges.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -123,29 +138,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PiHelperTest.calculate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SPOJ" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="challanges.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="challanges" />
-      <option name="MAIN_CLASS_NAME" value="challanges.PiHelperTest" />
-      <option name="METHOD_NAME" value="calculate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SUD" />
         <item itemvalue="Application.GEORGE" />
         <item itemvalue="Application.DISQUERY" />
         <item itemvalue="JUnit.DISQUERYTest.result" />
         <item itemvalue="JUnit.GEORGETest.time" />
-        <item itemvalue="JUnit.PiHelperTest.calculate" />
       </list>
     </recent_temporary>
   </component>
@@ -263,7 +262,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659097016074</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Add README.md">
+      <created>1659363750314</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1659363750314</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -308,7 +314,8 @@
     <MESSAGE value="Pival +- 30k + GEORGE and DISQUERY improvements (not accepted)" />
     <MESSAGE value="Structure improvement + GEORGE Accepted" />
     <MESSAGE value="GEORGE comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="GEORGE comments" />
+    <MESSAGE value="Add README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
