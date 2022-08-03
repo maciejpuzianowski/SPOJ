@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class SUD {
 
     public static void main(String[] args) {
+        long start = System.currentTimeMillis();
+        long stop;
         Scanner sc = new Scanner(System.in);
 
         int cases = 0;
@@ -27,99 +29,122 @@ public class SUD {
             }
 
             var sud = new Sudoku(board);
-
+            if(sud.solve()) sud.print();
+            else System.out.println("N");
+            stop = System.currentTimeMillis();
+            if(stop-start > 23990) break;
         }
     }
 }
 
 class Sudoku{
-    private int[][] Board;
+    private final int[][] Board;
 
     public Sudoku(int[][] board) {
         Board = board;
     }
 
-    private boolean[][] findSolved(){
-        boolean[][] isSolved = new boolean[9][9];
+    //marking existing numbers
+    private boolean[][] markExisting(){
+        boolean[][] exists = new boolean[9][9];
 
-        for(int i=0; i<9; i++)
-            for(int j=0; j<9; j++)
-                isSolved[i][j] = Board[i][j] != 0;
+        for(int i=0; i < Board.length; i++)
+            for(int j=0; j < Board.length; j++)
+                exists[i][j] = Board[i][j] != 0;
 
-        return isSolved;
+        return exists;
     }
 
     public boolean solve(){
-        boolean[][] isSolved = findSolved();
-        int row, col, k = 0;
+        boolean[][] existing = markExisting();
+        int row, col, id = 0;
         boolean backtracking = false;
 
-        while( k >= 0 && k < 81){
-            // Find row and col
-            row = k/9;
-            col = k%9;
+        while( id >= 0 && id < 81){
 
-            // Only handle the unsolved cells
-            if(!isSolved[row][col]){
+            // Row and col
+            row = id/9;
+            col = id%9;
+
+            // Check only empty spaces
+            if(!existing[row][col]){
                 Board[row][col]++;
 
-                // Find next valid value to try, if one exists
-                while(!isSafe(Board[row][col]+1, row, col) && Board[row][col] < 9)
+                // Search for next value
+                while(!isSafe(Board[row][col], row, col))
                     Board[row][col]++;
 
-                if(Board[row][col] >= 9){
-                    // no valid value exists. Reset cell and backtrack
+                if(Board[row][col] > 9){
+
+                    // No value found. We do back-tracking.
                     Board[row][col] = 0;
                     backtracking = true;
+
+
                 } else{
-                    // a valid value exists, move forward
+
+                    // Go forward.
                     backtracking = false;
                 }
             }
 
-            // if backtracking move back one, otherwise move forward 1.
-            k += backtracking ? -1:1;
+            // If back-tracking is on, we go back one step
+            id += backtracking ? -1:1;
         }
 
-        // k will either equal 81 if done or -1 if there was no solution.
-        return k == 81;
+        // If id == 81 - Done else, it is unsolvable
+        return id == 81;
     }
 
     private boolean isSafe(int num, int row, int col) {
-        return !this.usedInRow(num, row)
-                && !this.usedInColumn(num, col)
-                && !this.usedInBox(num, row, col);
+        return !this.isInRow(num, row, col)
+                && !this.isInColumn(num,row, col)
+                && !this.isInBox(num, row, col);
     }
 
-    private boolean usedInRow(int num, int row){
+    private boolean isInRow(int num, int row, int col){
         for(int i = 0; i < 9; i++){
-            if(Board[row][i] == num) return true;
+            if(i != col && Board[row][i] == num) return true;
         }
         return false;
     }
 
-    private boolean usedInColumn(int num, int column){
+    private boolean isInColumn(int num, int row, int column){
         for(int i = 0; i < 9; i++){
-            if(Board[i][column] == num) return true;
+            if(i != row && Board[i][column] == num) return true;
         }
         return false;
     }
 
-    private boolean usedInBox(int num, int row, int col){
-        row = row/3;
-        col = col/3;
-        for(int i = 0; i < 3; i++){
-            if(Board[row][i] == num) return true;
+    private boolean isInBox(int num, int row, int col){
+        int srow = row - row%3;
+        int scol = col - col%3;
+        for(int i = srow; i < srow + 3; i++) {
+            for (int j = scol; j < scol + 3; j++) {
+                if (i == row && j == col) continue;
+                if (Board[i][j] == num) return true;
+            }
         }
         return false;
     }
 
     public void print(){
+        System.out.println("Y");
+        for (int[] ints : Board) {
+            for (int j = 0; j < Board.length; j++) {
+                System.out.print(ints[j]);
+            }
+        }
+        System.out.println();
+    }
+
+    public void printForPeople(){
         for (int[] ints : Board) {
             for (int j = 0; j < Board.length; j++) {
                 System.out.print(ints[j] + " ");
             }
             System.out.println();
         }
+        System.out.println();
     }
 }

@@ -19,3 +19,4 @@ https://www.spoj.com/users/maciejpuz/
 - [KAMIL](https://www.spoj.com/challenges/KAMIL/) - Score: 234
 - [EVAL](https://www.spoj.com/challenges/EVAL/) - Score: 16116
 - [PIVAL](https://www.spoj.com/challenges/PIVAL/) - Score: 29999
+- [SUD](https://www.spoj.com/challenges/SUD/) - Score: 352.339386
