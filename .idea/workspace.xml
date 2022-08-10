@@ -7,10 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="DISQUERY in progress">
+    <list default="true" id="d7e212e9-8a17-4d0e-b08b-c575bb94c259" name="Changes" comment="lombok + SUD in progress">
+      <change afterPath="$PROJECT_DIR$/src/main/java/challanges/FIB64.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/challanges/SUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/challanges/SUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPOJ.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SPOJ.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -65,9 +70,22 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.SUD">
-    <configuration name="PIVAL" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="challanges.PIVAL" />
+  <component name="RunManager" selected="Application.FIB64">
+    <configuration name="DISQUERY" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="problems.DISQUERY" />
+      <module name="SPOJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="problems.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FIB64" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="challanges.FIB64" />
       <module name="SPOJ" />
       <extension name="coverage">
         <pattern>
@@ -75,6 +93,26 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GEORGE" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="problems.GEORGE" />
+      <module name="SPOJ" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="problems.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="SPOJ" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -92,61 +130,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DISQUERYTest.result" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SPOJ" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="problems.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="problems" />
-      <option name="MAIN_CLASS_NAME" value="problems.DISQUERYTest" />
-      <option name="METHOD_NAME" value="result" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GEORGETest.time" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SPOJ" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="problems.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="problems" />
-      <option name="MAIN_CLASS_NAME" value="problems.GEORGETest" />
-      <option name="METHOD_NAME" value="time" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PiHelperTest.calculate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SPOJ" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="challanges.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="challanges" />
-      <option name="MAIN_CLASS_NAME" value="challanges.PiHelperTest" />
-      <option name="METHOD_NAME" value="calculate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.FIB64" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.SUD" />
-        <item itemvalue="JUnit.DISQUERYTest.result" />
-        <item itemvalue="JUnit.GEORGETest.time" />
-        <item itemvalue="JUnit.PiHelperTest.calculate" />
-        <item itemvalue="Application.PIVAL" />
+        <item itemvalue="Application.GEORGE" />
+        <item itemvalue="Application.DISQUERY" />
       </list>
     </recent_temporary>
   </component>
@@ -257,7 +247,21 @@
       <option name="project" value="LOCAL" />
       <updated>1659095189438</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="GEORGE comments">
+      <created>1659097016074</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1659097016074</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Add README.md">
+      <created>1659363750314</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1659363750314</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -301,7 +305,9 @@
     <MESSAGE value="I genuinely think DISQUERY is ok" />
     <MESSAGE value="Pival +- 30k + GEORGE and DISQUERY improvements (not accepted)" />
     <MESSAGE value="Structure improvement + GEORGE Accepted" />
-    <option name="LAST_COMMIT_MESSAGE" value="Structure improvement + GEORGE Accepted" />
+    <MESSAGE value="GEORGE comments" />
+    <MESSAGE value="Add README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add README.md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -310,6 +316,11 @@
           <url>file://$PROJECT_DIR$/src/main/java/challanges/EVAL.java</url>
           <option name="timeStamp" value="65" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/problems/DISQUERY.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -317,18 +328,23 @@
         <PinnedItemInfo parentTag="Node" memberName="distance" />
         <PinnedItemInfo parentTag="Graph" memberName="Nodes" />
         <PinnedItemInfo parentTag="RoadMap" memberName="Route" />
-        <PinnedItemInfo parentTag="challanges.Sudoku" memberName="Board" />
       </pinned-members>
     </pin-to-top-manager>
     <watches-manager>
       <configuration name="Application">
-        <watch expression="this" language="JAVA" />
+        <watch expression="this" />
+        <watch expression="Map[0].Children.toArray()[1]" />
+        <watch expression="Map" language="JAVA" />
+        <watch expression="Map" language="JAVA" />
+        <watch expression="this" />
+        <watch expression="Route" language="JAVA" />
+        <watch expression="Route" language="JAVA" />
       </configuration>
     </watches-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/SPOJ$GEORGE.ic" NAME="GEORGE Coverage Results" MODIFIED="1658762393230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/SPOJ$EVAL.ic" NAME="EVAL Coverage Results" MODIFIED="1657881826627" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/SPOJ$GEORGE.ic" NAME="GEORGE Coverage Results" MODIFIED="1659010456674" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/SPOJ$Main.ic" NAME="Main Coverage Results" MODIFIED="1657012443916" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

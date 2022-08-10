@@ -15,8 +15,9 @@ https://www.spoj.com/users/maciejpuz/
 - [GEORGE](https://www.spoj.com/problems/GEORGE/)
 - [DISQUERY](https://www.spoj.com/problems/DISQUERY/) - not accepted, good output tho
 ## Solved challenges
-- [IMGREC1](https://www.spoj.com/challenges/IMGREC1/) - Score: 56
-- [KAMIL](https://www.spoj.com/challenges/KAMIL/) - Score: 234
-- [EVAL](https://www.spoj.com/challenges/EVAL/) - Score: 16116
-- [PIVAL](https://www.spoj.com/challenges/PIVAL/) - Score: 29999
-- [SUD](https://www.spoj.com/challenges/SUD/) - Score: 352.339386
+- [IMGREC1](https://www.spoj.com/problems/IMGREC1/) - Score: 56
+- [KAMIL](https://www.spoj.com/problems/KAMIL/) - Score: 234
+- [EVAL](https://www.spoj.com/problems/EVAL/) - Score: 16116
+- [PIVAL](https://www.spoj.com/problems/PIVAL/) - Score: 29999
+- [SUD](https://www.spoj.com/problems/SUD/) - Score: 352.339386
+- [FIB64](https://www.spoj.com/problems/FIB64/) - Score: 2550
